@@ -22,7 +22,8 @@ func move():
 		velocity = mov * vel
 		move_and_slide(velocity)
 		z_index = position.y
-		$Sprite/Sprite.flip_h = (destine.x < position.x)
+		$Sprite.scale.x = 1
+		if (destine.x < position.x): $Sprite.scale.x = -1
 	else: if state == "idle":
 		idle_time -= 1
 		if idle_time <= 0:
@@ -36,10 +37,7 @@ func move():
 func set_state(new_state):
 	if state == new_state: return
 	state = new_state
-	if state == "idle":
-		$Anim.play("idle")
-	if state == "walk":
-		$Anim.play("walk")
+	$Anim.play(state)
 
 func atack():
 	var dir = position.direction_to( get_global_mouse_position() )
