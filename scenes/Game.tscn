@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://prefabs/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Game.gd" type="Script" id=2]
 [ext_resource path="res://assets/cursor.png" type="Texture" id=3]
 [ext_resource path="res://prefabs/Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/skeleton.png" type="Texture" id=5]
 
 [node name="Game" type="Control"]
 anchor_right = 1.0
@@ -14,6 +15,44 @@ __meta__ = {
 }
 
 [node name="Map" type="Node2D" parent="."]
+
+[node name="Deco" type="Node2D" parent="Map"]
+
+[node name="d1" type="Sprite" parent="Map/Deco"]
+position = Vector2( 578, 157 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+offset = Vector2( 0, -16.639 )
+
+[node name="d2" type="Sprite" parent="Map/Deco"]
+position = Vector2( 326, 297 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+offset = Vector2( 0, -16.639 )
+
+[node name="d3" type="Sprite" parent="Map/Deco"]
+position = Vector2( 636, 311 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+offset = Vector2( 0, -16.639 )
+
+[node name="d4" type="Sprite" parent="Map/Deco"]
+position = Vector2( 839, 198 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+offset = Vector2( 0, -16.639 )
+
+[node name="d5" type="Sprite" parent="Map/Deco"]
+position = Vector2( 835, 412 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+offset = Vector2( 0, -16.639 )
+
+[node name="d6" type="Sprite" parent="Map/Deco"]
+position = Vector2( 127, 409 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+offset = Vector2( 0, -16.639 )
 
 [node name="Enemy" parent="." instance=ExtResource( 4 )]
 position = Vector2( 215, 126 )
