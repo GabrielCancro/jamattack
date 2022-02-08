@@ -21,7 +21,7 @@ func _process(delta):
 	if ttl<=0: queue_free()
 
 func on_enter_body(body):
-	print(body)
+	print(body.name)
 	if !body.get("team"): return
 	if body.team == own: return
 	print(body)
