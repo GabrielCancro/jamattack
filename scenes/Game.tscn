@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://prefabs/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Game.gd" type="Script" id=2]
 [ext_resource path="res://assets/cursor.png" type="Texture" id=3]
-[ext_resource path="res://prefabs/Enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/tree1.png" type="Texture" id=5]
 [ext_resource path="res://assets/tree2.png" type="Texture" id=6]
 
@@ -63,9 +62,6 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 6 )
 offset = Vector2( 0, -16.639 )
 
-[node name="Enemy" parent="." instance=ExtResource( 4 )]
-position = Vector2( 215, 126 )
-
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 517, 334 )
 
@@ -76,3 +72,13 @@ z_index = 1000
 position = Vector2( 8, 8 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
+
+[node name="lb_score" type="Label" parent="."]
+anchor_right = 1.0
+margin_left = 39.0
+margin_bottom = 29.0
+text = "SCORE: "
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

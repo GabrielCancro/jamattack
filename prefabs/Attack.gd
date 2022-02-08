@@ -5,23 +5,26 @@ var speed = 100
 var vel_init = Vector2(0,0)
 var ttl = 1
 var own = 0
+var damage = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	position += dir * 10
-	connect("area_entered",self,"on_enter_body")
+	connect("body_entered",self,"on_enter_body")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	look_at( position + dir )
 	position += (vel_init + dir * speed) * delta * ttl*2
-	ttl *= .9
+	ttl *= .92
 	modulate.a = ttl
-	if ttl<=0: queue_free()
+	if ttl<=.1: queue_free()
 
 func on_enter_body(body):
-	print(body.name)
 	if !body.get("team"): return
 	if body.team == own: return
-	print(body)
+	if body.has_method("hit") : 
+		body.hit(1)
+		body.modulate.r = 6
+		body.SM.impulse = dir*200

@@ -11,9 +11,14 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	for d in $Map/Deco.get_children():
 		d.z_index = d.position.y
-	pass # Replace with function body.
-
+	GC.spawn()
+	GC.spawn()
+	GC.spawn()
+	GC.spawn()
+	GC.spawn()
+	GC.spawn()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$Cursor.position = get_global_mouse_position()
+
