@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var speed = 100
+var team = 1
 onready var SM = get_node("StateMachine")
 
 # Called when the node enters the scene tree for the first time.

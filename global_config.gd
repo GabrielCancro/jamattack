@@ -14,6 +14,7 @@ func _ready():
 
 func attack(own,pos,dir,vel_init=Vector2(0,0)):
 	var go = preload("res://prefabs/Attack.tscn").instance()
+	go.own = own
 	go.position = pos
 	go.dir = dir
 	go.vel_init = vel_init

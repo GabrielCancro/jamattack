@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 var speed = 60
 var idle_time = 50
+var team = 2
 onready var SM = get_node("StateMachine")
 
 
