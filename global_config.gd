@@ -45,4 +45,4 @@ func low_update_emiter():
 
 func addPoints(scr):
 	score += scr
-	GAME.get_node("lb_score").text = "SCORE: "+str(score)
+	GAME.get_node("lb_score").text = "ASESINATOS: "+str(score)

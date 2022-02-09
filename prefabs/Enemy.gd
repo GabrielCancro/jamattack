@@ -6,23 +6,28 @@ var team = 2
 var hp = 3
 var attack = 1
 var persecution = false
+var attack_charge = 1
 onready var SM = get_node("StateMachine")
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	GC.connect("low_update",self,"low_update")
 
 func _process(delta):
 	move_ia()
 	SM.update_state()
 	SM.direction = position.direction_to(SM.destine)
 	SM.look_dir = SM.direction
-	if position.distance_to(GC.PLAYER.position)<70: 
+	
+	if position.distance_to(GC.PLAYER.position)<70 && attack_charge >=1: 
+		attack_charge = 0
 		SM.look_dir = position.direction_to(GC.PLAYER.position)
 		SM.set_state("attack")
 		persecution = false
-		
+
+func low_update():
+	if attack_charge<1: attack_charge += 0.18
 
 func move_ia():
 	if persecution:
@@ -37,16 +42,16 @@ func move_ia():
 				print("PERSECUTION!!!")
 			else: SM.destine = position + Vector2( rand_range(-200,200), rand_range(-180,180) )
 			SM.destine = GC.limit(SM.destine,Vector2(100,80),Vector2(900,520))
-			
+
 
 
 func atack_with_anim():
-	var dir = position.direction_to( get_global_mouse_position() )
-	GC.attack( 2, position, SM.look_dir.normalized(), Vector2.ZERO )
+	var dir = position.direction_to(GC.PLAYER.position)
+	GC.attack( 2, position, dir, Vector2.ZERO )
 
 func hit(dam):
 	hp -= dam
 	if hp<= 0: 
 		queue_free()
-		GC.addPoints(50)
+		GC.addPoints(1)
 		GC.spawn()
