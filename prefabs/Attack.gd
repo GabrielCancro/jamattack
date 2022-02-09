@@ -26,5 +26,5 @@ func on_enter_body(body):
 	if body.team == own: return
 	if body.has_method("hit") : 
 		body.hit(1)
-		body.modulate.r = 6
+		body.modulate.r = 10
 		body.SM.impulse = dir*200
