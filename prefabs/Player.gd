@@ -5,6 +5,8 @@ var team = 1
 var hp = 5
 var attack = 1
 var slide_charge = 1
+
+signal change_stats
 onready var SM = get_node("StateMachine")
 
 # Called when the node enters the scene tree for the first time.
@@ -44,6 +46,6 @@ func atack_with_anim():
 
 func hit(dam):
 	hp -= dam
-	if hp<= 0:
-		hp = 5
-		position = Vector2(600,250)
+	GC.blood(position)
+	if hp<= 0: GC.end_game()
+	emit_signal("change_stats")

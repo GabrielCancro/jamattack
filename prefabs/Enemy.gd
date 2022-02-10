@@ -51,6 +51,7 @@ func atack_with_anim():
 
 func hit(dam):
 	hp -= dam
+	GC.blood(position)
 	if hp<= 0: 
 		queue_free()
 		GC.addPoints(1)

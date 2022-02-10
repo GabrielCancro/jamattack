@@ -24,7 +24,7 @@ func spawn():
 	en.position = PLAYER.position
 	while en.position.distance_to(PLAYER.position) < 150:
 		en.position = Vector2( rand_range(100,924), rand_range(80,520) )
-	GAME.add_child(en)
+	GAME.get_node("Enemies").add_child(en)
 
 func limit(vec_orig, vec_min, vec_max):
 	if vec_orig.x<vec_min.x: vec_orig.x = vec_min.x
@@ -45,4 +45,20 @@ func low_update_emiter():
 
 func addPoints(scr):
 	score += scr
-	GAME.get_node("lb_score").text = "ASESINATOS: "+str(score)
+	GAME.get_node("UI/lb_score").text = "ASESINATOS: "+str(score)
+
+func blood(pos):
+	var blood = preload("res://prefabs/Blood.tscn").instance()
+	blood.emitting = true
+	blood.one_shot = true
+	blood.position = pos
+	blood.z_index = pos.y + 4
+	GAME.add_child(blood)
+
+func end_game():
+	GAME.on_pause()
+	PLAYER.position = Vector2(600,250)
+	PLAYER.hp = 5	
+	GAME.get_node("UI/Control_Pause/Label").text = "HAS MUERTO!\nASESINASTE "+str(score)+" conejos"
+	GAME.get_node("UI/Control_Pause/btn_continue").text = "COMENZAR"
+	score = 0
