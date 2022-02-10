@@ -29,7 +29,10 @@ func _process(delta):
 	pass
 
 func update_ui_stats():
-	$UI/lb_stats.text = "SALUD: "+str(GC.PLAYER.hp)
+#	$UI/lb_stats.text = "SALUD: "+str(GC.PLAYER.hp)
+	for i in range(5):
+		if(GC.PLAYER.hp>i): $UI/LifeBar.get_node("HP"+str(i+1)).modulate = Color(1,1,1,1)
+		else: $UI/LifeBar.get_node("HP"+str(i+1)).modulate = Color(.1,.1,.1,1)
 
 func on_pause():
 	$UI/Control_Pause.visible = true
