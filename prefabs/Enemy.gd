@@ -56,3 +56,4 @@ func hit(dam):
 		queue_free()
 		GC.addPoints(1)
 		GC.spawn()
+		GC.dead(self)

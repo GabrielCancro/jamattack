@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/bunnyd.png" type="Texture" id=1]
+
+[node name="Dead" type="Sprite"]
+modulate = Color( 0.541176, 0.541176, 0.541176, 1 )
+position = Vector2( 0, -5 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 1 )
