@@ -1,9 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://assets/bunnyd.png" type="Texture" id=1]
+[ext_resource path="res://assets/ene4.png" type="Texture" id=1]
+[ext_resource path="res://prefabs/Dead.gd" type="Script" id=2]
 
 [node name="Dead" type="Sprite"]
-modulate = Color( 0.541176, 0.541176, 0.541176, 1 )
 position = Vector2( 0, -5 )
-scale = Vector2( 1.2, 1.2 )
+scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 1 )
+script = ExtResource( 2 )

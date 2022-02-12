@@ -8,6 +8,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	GC.init()
 	GC.PLAYER.connect("change_stats",self,"update_ui_stats")
 	update_ui_stats()
 	$UI/btn_pause.connect("button_down",self,"on_pause")
@@ -23,6 +24,7 @@ func _ready():
 	GC.spawn()
 	$UI/Control_Pause.visible = true
 	get_tree().paused = true
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -39,7 +39,6 @@ func move_ia():
 			idle_time = rand_range(50,250)
 			if randf() < 0.15: 
 				persecution = true
-				print("PERSECUTION!!!")
 			else: SM.destine = position + Vector2( rand_range(-200,200), rand_range(-180,180) )
 			SM.destine = GC.limit(SM.destine,Vector2(100,80),Vector2(900,520))
 
@@ -55,5 +54,4 @@ func hit(dam):
 	if hp<= 0: 
 		queue_free()
 		GC.addPoints(1)
-		GC.spawn()
 		GC.dead(self)
