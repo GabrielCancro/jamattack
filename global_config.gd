@@ -2,7 +2,7 @@ extends Node
 
 var attack_scen
 var score = 0
-var objetive_score = 15
+var objetive_score = 7
 var GAME
 var PLAYER
 signal low_update
@@ -74,7 +74,7 @@ func dead(own):
 	GAME.get_node("Deads").add_child(dead)
 	
 func end_game():
-	PLAYER.position = Vector2(99999,99999)
+	PLAYER.position.y = -5000
 	yield(get_tree().create_timer(3),"timeout")
 	PLAYER.hp = 5
 	score = 0

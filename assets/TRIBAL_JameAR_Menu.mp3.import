@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/TRIBAL_JameAR_Menu.mp3-377a3eb156591af91b9105dd9bb023a6.mp3str"
+
+[deps]
+
+source_file="res://assets/TRIBAL_JameAR_Menu.mp3"
+dest_files=[ "res://.import/TRIBAL_JameAR_Menu.mp3-377a3eb156591af91b9105dd9bb023a6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -40,4 +40,5 @@ func low_update():
 			if head.position.distance_to(position)<30:
 				GC.blood(head.position)
 				GC.blood(head.position)
+				GC.addPoints(1)
 				head.queue_free()

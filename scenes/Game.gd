@@ -16,15 +16,15 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	for d in $Map/Deco.get_children():
 		d.z_index = d.position.y
-	GC.spawn()
-	GC.spawn()
-	GC.spawn()
-	GC.spawn()
-	GC.spawn()
-	GC.spawn()
-	$UI/Control_Pause.visible = true
-	get_tree().paused = true
-	
+	create_enemies()
+	on_pause()
+
+func create_enemies():
+	GC.spawn(); GC.spawn(); GC.spawn()
+	yield(get_tree().create_timer(15),"timeout")
+	GC.spawn(); GC.spawn();
+	yield(get_tree().create_timer(15),"timeout")
+	GC.spawn(); GC.spawn();
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -39,6 +39,7 @@ func update_ui_stats():
 func on_pause():
 	$UI/Control_Pause.visible = true
 	get_tree().paused = true
+	$UI/Control_Pause/Audio.stream_paused = false
 
 func on_continue():
 	$UI/Control_Pause.visible = false
@@ -46,3 +47,4 @@ func on_continue():
 	$UI/Control_Pause/Label.text = "PAUSADO"
 	yield(get_tree().create_timer(.2),"timeout")
 	get_tree().paused = false
+	$UI/Control_Pause/Audio.stream_paused = true

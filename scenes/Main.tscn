@@ -26,3 +26,6 @@ margin_right = 86.0
 margin_bottom = 22.5
 custom_fonts/font = SubResource( 1 )
 text = "Comenzar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
