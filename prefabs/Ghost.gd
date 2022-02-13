@@ -33,7 +33,7 @@ func low_update():
 		dir = position.direction_to(destine)
 	speed = 20
 	for head in GC.GAME.get_node("Deads").get_children():
-		if head.position.distance_to(position)<150:
+		if head.position.distance_to(position)<170:
 			destine = head.position
 			speed = 40
 			dir = position.direction_to(destine)

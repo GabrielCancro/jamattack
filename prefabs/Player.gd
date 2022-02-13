@@ -48,7 +48,5 @@ func atack_with_anim():
 func hit(dam):
 	hp -= dam
 	GC.blood(position)
-	if hp<= 0: 
-		GC.GAME.get_node("SFX/sfx_end_game").play()
-		GC.end_game()
+	if hp<= 0: GC.end_game()
 	emit_signal("change_stats")

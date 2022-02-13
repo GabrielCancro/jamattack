@@ -15,7 +15,8 @@ func _ready():
 func init():
 	GAME = get_node("/root/Game")
 	PLAYER = get_node("/root/Game/Player")
-	start_low_update_timer()	
+	start_low_update_timer()
+	
 	
 func attack(own,pos,dir,vel_init=Vector2(0,0)):
 	var go = preload("res://prefabs/Attack.tscn").instance()
@@ -74,11 +75,13 @@ func dead(own):
 	
 func end_game():
 	PLAYER.position.y = -5000
+	GAME.get_node("SFX/sfx_end_game").play()
 	yield(get_tree().create_timer(3),"timeout")
 	PLAYER.hp = 5
 	score = 0
 	get_tree().change_scene("res://scenes/Main.tscn")
 
 func win_game():
-	yield(get_tree().create_timer(2),"timeout")
+	GAME.get_node("SFX/sfx_win").play()
+	yield(get_tree().create_timer(3),"timeout")
 	get_tree().change_scene("res://scenes/Win.tscn")
