@@ -41,4 +41,5 @@ func low_update():
 				GC.blood(head.position)
 				GC.blood(head.position)
 				GC.addPoints(1)
+				GC.GAME.get_node("SFX/sfx_ghost").play()
 				head.queue_free()

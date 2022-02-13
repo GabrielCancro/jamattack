@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/JameAR_SFX_Ghost.ogg-d400a14f6b34fb128e3339fe43be2c39.oggstr"
+
+[deps]
+
+source_file="res://assets/SFX/JameAR_SFX_Ghost.ogg"
+dest_files=[ "res://.import/JameAR_SFX_Ghost.ogg-d400a14f6b34fb128e3339fe43be2c39.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

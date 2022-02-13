@@ -39,7 +39,6 @@ func update_ui_stats():
 func on_pause():
 	$UI/Control_Pause.visible = true
 	get_tree().paused = true
-	$UI/Control_Pause/Audio.stream_paused = false
 
 func on_continue():
 	$UI/Control_Pause.visible = false
@@ -47,4 +46,3 @@ func on_continue():
 	$UI/Control_Pause/Label.text = "PAUSADO"
 	yield(get_tree().create_timer(.2),"timeout")
 	get_tree().paused = false
-	$UI/Control_Pause/Audio.stream_paused = true

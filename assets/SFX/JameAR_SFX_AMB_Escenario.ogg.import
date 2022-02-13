@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/JameAR_SFX_AMB_Escenario.ogg-7c56de1769c9ecc97c36c6ac6d7052f1.oggstr"
+
+[deps]
+
+source_file="res://assets/SFX/JameAR_SFX_AMB_Escenario.ogg"
+dest_files=[ "res://.import/JameAR_SFX_AMB_Escenario.ogg-7c56de1769c9ecc97c36c6ac6d7052f1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

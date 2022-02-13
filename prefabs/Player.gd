@@ -22,7 +22,7 @@ func low_update():
 	
 func _process(delta):
 	SM.update_state()
-	move()	
+	move()
 	if Input.is_mouse_button_pressed(1): SM.set_state("attack")
 
 func move():
@@ -47,5 +47,7 @@ func atack_with_anim():
 func hit(dam):
 	hp -= dam
 	GC.blood(position)
-	if hp<= 0: GC.end_game()
+	if hp<= 0: 
+		GC.GAME.get_node("SFX/sfx_end_game").play()
+		GC.end_game()
 	emit_signal("change_stats")

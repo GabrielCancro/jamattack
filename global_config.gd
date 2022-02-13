@@ -1,5 +1,6 @@
 extends Node
 
+var intro_time = 0
 var attack_scen
 var score = 0
 var objetive_score = 7
@@ -53,7 +54,7 @@ func low_update_emiter():
 
 func addPoints(scr):
 	score += scr
-	GAME.get_node("UI/lb_score").text = "ASESINATOS: "+str(score)+"/"+str(objetive_score)
+	GAME.get_node("UI/lb_score").text = "ALMAS ERRANTES: "+str(objetive_score-score)
 	if score == objetive_score: 
 		end_game()
 		GAME.get_node("UI/Control_Pause/Label").text = "MISION CUMPLIDA!\nASESINASTE "+str(objetive_score)+" conejos"

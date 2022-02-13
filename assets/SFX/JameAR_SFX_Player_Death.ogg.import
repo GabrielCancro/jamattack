@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/JameAR_SFX_Player_Death.ogg-cd37a862411302f707030de96671ab97.oggstr"
+
+[deps]
+
+source_file="res://assets/SFX/JameAR_SFX_Player_Death.ogg"
+dest_files=[ "res://.import/JameAR_SFX_Player_Death.ogg-cd37a862411302f707030de96671ab97.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

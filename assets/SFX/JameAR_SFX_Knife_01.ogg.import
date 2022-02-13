@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/JameAR_SFX_Knife_01.ogg-a0824b90d76f12bea4efde557e69c3d5.oggstr"
+
+[deps]
+
+source_file="res://assets/SFX/JameAR_SFX_Knife_01.ogg"
+dest_files=[ "res://.import/JameAR_SFX_Knife_01.ogg-a0824b90d76f12bea4efde557e69c3d5.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

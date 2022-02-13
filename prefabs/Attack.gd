@@ -26,5 +26,6 @@ func on_enter_body(body):
 	if body.team == own: return
 	if body.has_method("hit") : 
 		body.hit(1)
+		GC.GAME.get_node("SFX/sfx_hit1").play()
 		body.modulate.r = 10
 		body.SM.impulse = dir*200
