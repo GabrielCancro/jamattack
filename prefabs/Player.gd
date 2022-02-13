@@ -30,11 +30,12 @@ func move():
 	if Input.is_action_pressed("ui_up"): mov.y = -1
 	if Input.is_action_pressed("ui_down"): mov.y = 1
 	if Input.is_action_pressed("ui_left"): mov.x = -1
-	if Input.is_action_pressed("ui_right"): mov.x = 1	
+	if Input.is_action_pressed("ui_right"): mov.x = 1
 	SM.direction = mov.normalized()
 	if Input.is_action_pressed("ui_select") && slide_charge>=1: 
 		slide_charge = 0
 		SM.impulse = SM.direction * 500
+		GC.GAME.get_node("SFX/sfx_dash").play()
 	SM.destine = position + SM.direction * 100
 	
 	SM.look_dir = position.direction_to( get_global_mouse_position() )

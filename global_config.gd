@@ -80,5 +80,5 @@ func end_game():
 	get_tree().change_scene("res://scenes/Main.tscn")
 
 func win_game():
-	yield(get_tree().create_timer(3),"timeout")
+	yield(get_tree().create_timer(2),"timeout")
 	get_tree().change_scene("res://scenes/Win.tscn")
