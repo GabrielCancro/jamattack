@@ -20,10 +20,16 @@ func _ready():
 	on_pause()
 
 func create_enemies():
+	GC.objetive_score = 3
+	GC.addPoints(0)
 	GC.spawn(); GC.spawn(); GC.spawn()
 	yield(get_tree().create_timer(15),"timeout")
+	GC.objetive_score += 2
+	GC.addPoints(0)
 	GC.spawn(); GC.spawn();
 	yield(get_tree().create_timer(15),"timeout")
+	GC.objetive_score += 2
+	GC.addPoints(0)
 	GC.spawn(); GC.spawn();
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

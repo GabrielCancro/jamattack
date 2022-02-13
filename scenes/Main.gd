@@ -15,6 +15,5 @@ func start_game():
 func _process(delta):
 	GC.intro_time += delta * 25
 	$Instructions.visible_characters = GC.intro_time
-	if GC.intro_time>200:
+	if GC.intro_time>100:
 		$Button.visible = true
-		set_process(false)

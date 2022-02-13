@@ -3,7 +3,7 @@ extends Node
 var intro_time = 0
 var attack_scen
 var score = 0
-var objetive_score = 7
+var objetive_score = 1
 var GAME
 var PLAYER
 signal low_update
@@ -15,8 +15,7 @@ func _ready():
 func init():
 	GAME = get_node("/root/Game")
 	PLAYER = get_node("/root/Game/Player")
-	start_low_update_timer()
-	addPoints(0)
+	start_low_update_timer()	
 	
 func attack(own,pos,dir,vel_init=Vector2(0,0)):
 	var go = preload("res://prefabs/Attack.tscn").instance()
@@ -55,9 +54,8 @@ func low_update_emiter():
 func addPoints(scr):
 	score += scr
 	GAME.get_node("UI/lb_score").text = "ALMAS ERRANTES: "+str(objetive_score-score)
-	if score == objetive_score: 
-		end_game()
-		GAME.get_node("UI/Control_Pause/Label").text = "MISION CUMPLIDA!\nASESINASTE "+str(objetive_score)+" conejos"
+	if score == objetive_score: win_game()
+		
 
 func blood(pos):
 	var blood = preload("res://prefabs/Blood.tscn").instance()
@@ -80,3 +78,7 @@ func end_game():
 	PLAYER.hp = 5
 	score = 0
 	get_tree().change_scene("res://scenes/Main.tscn")
+
+func win_game():
+	yield(get_tree().create_timer(3),"timeout")
+	get_tree().change_scene("res://scenes/Win.tscn")
